@@ -48,7 +48,6 @@ const showArtists = (data) => {
 
 const fetchAlbums = (id) => {
     const url = `https://theaudiodb.com/api/v1/json/2/album.php?i=${id}`;
-    console.log(url)
     fetch(url)
         .then((res) => res.json())
         .then((data) => showAlbum(data));
@@ -60,7 +59,6 @@ const showAlbum = (data) => {
     const albumContainer = elementById("albums");
     albumContainer.innerHTML = ''
     data.album.forEach((item) => {
-        console.log(item);
         const div = document.createElement("div");
         div.classList.add("album");
         div.innerHTML = `
